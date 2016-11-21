@@ -8,10 +8,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     selector:'my-app',
     template:
        `<h1>{{title}}</h1>
-      	<h2>{{carPart.name}}</h2>
-	<p>{{carPart.description}}</p>
-	<p>{{carPart.inStock}} in stock</p>`
-
+      	<ul>
+	  <li *ngFor="let carPart of carParts">
+	    <h2>{{carPart.name}}</h2>
+	    <p>{{carPart.description}}</p>
+	    <p *ngIf="carpart.inStock > 0">{{carPart.inStock}} in stock</p>
+	    <p *ngIf="carpart.inStock === 0">Out of Stock</p>
+	  </li>
+	</ul>` 
    
 })
 class AppComponent{
@@ -27,7 +31,7 @@ class AppComponent{
     "id" : 2,
     "name" : "Second Super tires",
     "description" : "Another best tires",
-    "inStock" : 3
+    "inStock" : 0
 	   
    }];
 

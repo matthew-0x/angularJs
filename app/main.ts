@@ -17,12 +17,19 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 class AppComponent{
 
  title = "Ultra Racing";
- carPart = {
+ carParts = [{
    "id" : 1,
    "name" : "Super tires",
    "description" : "The best tires",
    "inStock" : 5
-   };
+   },
+   {
+    "id" : 2,
+    "name" : "Second Super tires",
+    "description" : "Another best tires",
+    "inStock" : 3
+	   
+   }];
 
 }
 

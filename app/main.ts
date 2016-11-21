@@ -8,12 +8,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     selector:'my-app',
     template:
        `<h1>{{title}}</h1>
+        <p>Total car parts in stock are {{totalCarParts()}}</p>
       	<ul>
 	  <li *ngFor="let carPart of carParts">
-	    <h2>{{carPart.name}}</h2>
+	    <h2>{{carPart.name | uppercase}}</h2>
 	    <p>{{carPart.description}}</p>
-	    <p *ngIf="carpart.inStock > 0">{{carPart.inStock}} in stock</p>
-	    <p *ngIf="carpart.inStock === 0">Out of Stock</p>
+	    <p>{{carPart.price | currency: 'USD': true}}</p>
+	    <p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in stock</p>
+	    <p *ngIf="carPart.inStock === 0">Out of Stock</p>
+	    
 	  </li>
 	</ul>` 
    
@@ -35,6 +38,15 @@ class AppComponent{
 	   
    }];
 
+ totalCarParts(){
+  let sum=0;
+  
+  for(let carPart of this.carParts){
+     sum += carPart.inStock;
+  }
+  return sum;
+ 
+ }
 }
 
 

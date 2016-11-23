@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CarPart } from './car-part';
+
 
 @Component({
 
@@ -9,7 +11,7 @@ import { Component } from '@angular/core';
     })
 export class CarPartsComponent{
 
-  carParts = [{
+  carParts : CarPart[] = [{
 	  "id" : 1,
 	  "name" : "Super tires",
 	  "description" : "The best tires",

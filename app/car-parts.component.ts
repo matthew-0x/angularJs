@@ -3,21 +3,13 @@ import { Component } from '@angular/core';
 @Component({
 
     selector:'car-parts',
-    template:
-	    `<p>Total car parts in stock are {{totalCarParts()}}</p>
-	     <ul>
-	       <li *ngFor="let carPart of carParts">
-		     <h2>{{carPart.name | uppercase}}</h2>
-		     <p>{{carPart.description}}</p>
-			 <p>{{carPart.price | currency: 'USD': true}}</p>
-			 <p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in stock</p>
-			<p *ngIf="carPart.inStock === 0">Out of Stock</p>
-          </li>
-         </ul>`
+    templateUrl: 'app/car-parts.component.html',
+	styleUrls: ['app/car-parts.component.css']
+	
     })
 export class CarPartsComponent{
 
- carParts = [{
+  carParts = [{
 	  "id" : 1,
 	  "name" : "Super tires",
 	  "description" : "The best tires",

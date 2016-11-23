@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CarPart } from './car-part';
-
+import { CARPARTS } from './mocks'
 
 @Component({
 
@@ -11,20 +11,9 @@ import { CarPart } from './car-part';
     })
 export class CarPartsComponent{
 
-  carParts : CarPart[] = [{
-	  "id" : 1,
-	  "name" : "Super tires",
-	  "description" : "The best tires",
-	  "inStock" : 5
-	  },
-	{
-	 "id" : 2,
-	 "name" : "Second Super tires",
-	 "description" : "Another best tires",
-	 "inStock" : 0
-    }];
+  carParts : CarPart[] ;
 
-    totalCarParts(){
+  totalCarParts(){
        let sum=0;
        for(let carPart of this.carParts){
 	      sum += carPart.inStock;
@@ -32,4 +21,5 @@ export class CarPartsComponent{
 	   return sum;
     }
 
-}
+  }
+

@@ -12,7 +12,12 @@ import { CARPARTS } from './mocks'
 export class CarPartsComponent{
 
   carParts : CarPart[] ;
-
+  
+  ngOnInit(){
+      this.carParts = CARPARTS;
+  }
+  
+  
   totalCarParts(){
        let sum=0;
        for(let carPart of this.carParts){
